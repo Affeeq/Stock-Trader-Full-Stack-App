@@ -8,6 +8,7 @@ const 	express = require('express'),
 
 // require routes
 const index = require('./routes/index');
+const stocks = require('./routes/stocks');
 
 // mongoose config
 // process.env.DATABASEURL || 
@@ -40,6 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // routes config
 app.use('/', index);
+app.use('/stocks', stocks);
 
 // app listen
 const port = process.env.PORT || 3000;
